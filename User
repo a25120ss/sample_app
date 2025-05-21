@@ -1,0 +1,13 @@
+=> 
+[[32m#<User:0x0000768ffeecc958[0m
+  id: [34m[1m1[0m,
+  name: [31m[1m"[0m[31mSandboxUser[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31msandb@x[0m[31m[1m"[0m,
+  created_at: Sat, 10 May 2025 04:25:10.228493000 UTC +00:00,
+  updated_at: Sat, 10 May 2025 04:25:10.228493000 UTC +00:00[32m>[0m,
+ [32m#<User:0x0000768ffeecc818[0m
+  id: [34m[1m2[0m,
+  name: [31m[1m"[0m[31msandbox2[0m[31m[1m"[0m,
+  email: [31m[1m"[0m[31msandb@x2[0m[31m[1m"[0m,
+  created_at: Sat, 10 May 2025 04:29:49.806509000 UTC +00:00,
+  updated_at: Sat, 10 May 2025 04:29:49.806509000 UTC +00:00[32m>[0m]
