@@ -23,5 +23,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect! # GET /users/:id  &破壊的メソッド（元に戻れないっていう注意喚起慣習）
     assert_template 'users/show'
+    assert is_logged_in?
   end
 end
