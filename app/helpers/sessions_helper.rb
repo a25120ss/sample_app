@@ -22,4 +22,14 @@ module SessionsHelper
     reset_session
     @current_user = nil # 安全のため
   end
+
+  # アクセスしようとしたURLをsessionに保存する
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get? # web経由でリクエストが投げられたときにだけ発動
+  end
+
+  # 渡されたユーザーがカレントユーザーであればtrueを返す
+  def current_user?(user)
+    user && user == current_user
+  end
 end
