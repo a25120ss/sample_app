@@ -21,11 +21,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      reset_session
-      log_in @user
-      # =>Success alert-success
-      flash[:success] = 'Welcome to the Sample App!'
-      redirect_to @user
+      # 保存するときにはトークン作成とアクティベーションは有効になっている
+      @user.send_activation_email
+      flash[:info] = 'Please check your email to activate your account.'
+      redirect_to root_url
     else
       render 'new', status: :unprocessable_entity # ユーザにエラー原因表示するためのオプション（ブラウザ側）
       # render new により失敗時Userのデータを入れ込んだnewテンプレートを表示(Failure)
