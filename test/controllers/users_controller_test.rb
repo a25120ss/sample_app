@@ -31,7 +31,7 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to login_url
   end
 
-  #DESTROYを実行するとき（ログインしてない）
+  # DESTROYを実行するとき（ログインしてない）
   test 'should redirect destroy when not logged in' do
     assert_no_difference 'User.count' do
       delete user_path(@user)
@@ -47,5 +47,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
     end
     assert_response :see_other
     assert_redirected_to root_url
+  end
+  test 'should redirect following when not logged in' do
+    get following_user_path(@user)
+    assert_redirected_to login_url
+  end
+
+  test 'should redirect followers when not logged in' do
+    get followers_user_path(@user)
+    assert_redirected_to login_url
   end
 end
